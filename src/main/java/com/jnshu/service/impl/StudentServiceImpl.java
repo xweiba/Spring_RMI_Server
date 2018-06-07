@@ -15,18 +15,14 @@ import java.util.List;
 @Service
 public class StudentServiceImpl implements StudentService{
 
-    public List<Student> getRencentStudent(int count) {
-        return null;
-    }
-
     public void saveStudent(Student student) {
         System.out.println("保存学生数据: " + student.toString());
     }
 
     public Student getStudent(long id) {
         Student student = new Student();
-        student.setPassword("dsadas");
-        student.setUsername("" + id);
+        student.setPassword("服务端获取客户端传输的setPassword为: " + id);
+        student.setUsername("这是服务器端学生名称");
         System.out.println("获取学生数据: " + student.toString());
         return student;
     }
