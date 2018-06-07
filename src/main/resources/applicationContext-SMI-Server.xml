@@ -14,7 +14,7 @@
         <property name="serviceInterface" value="com.jnshu.service.StudentService"/>
         <!-- 注册端口号 用来暴露发现服务 -->
         <property name="registryPort" value="8888" />
-        <!-- 设置服务端口号 用来传输数据 -->
+        <!-- 设置服务端口号 用来传输数据 这个参数是可选参数, 当不设置的时候, 数据传输会使用随机端口号 -->
         <property name="servicePort" value="9999" />
     </bean>
 </beans>
