@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.jnshu.service.impl"/>
+    <bean id="serviceAuth" class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <!-- 设置服务名称 -->
+        <property name="serviceName" value="StudentService"/>
+        <!-- 设置服务类 -->
+        <property name="service" ref="studentServiceImpl"/>
+        <!-- 设置服务接口 -->
+        <property name="serviceInterface" value="com.jnshu.service.StudentService"/>
+        <!-- 注册端口号 用来暴露发现服务 -->
+        <property name="registryPort" value="8888" />
+        <!-- 设置服务端口号 用来传输数据 -->
+        <property name="servicePort" value="9999" />
+    </bean>
+</beans>
